@@ -5,10 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.NavigationUI
 import com.google.android.material.navigation.NavigationView
 
 class FragmentA : Fragment() {
@@ -42,5 +45,11 @@ class FragmentA : Fragment() {
 
             true
         }
+
+        val toolbar = view.findViewById<Toolbar>(R.id.toolbar)
+        val drawerLayout = view.findViewById<DrawerLayout>(R.id.drawer_layout)
+        val appBarConfig = AppBarConfiguration(findNavController().graph, drawerLayout)
+
+        NavigationUI.setupWithNavController(toolbar, findNavController(), appBarConfig)
     }
 }
