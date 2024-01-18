@@ -25,7 +25,7 @@ class FragmentA : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val drawerLayout = view.findViewById<DrawerLayout>(R.id.drawer_layout)
+        val drawerLayout = activity?.findViewById<DrawerLayout>(R.id.drawer_layout)
         val toolbar = view.findViewById<Toolbar>(R.id.toolbar)
         val appBarConfig = AppBarConfiguration(findNavController().graph, drawerLayout)
 
@@ -39,16 +39,15 @@ class FragmentA : Fragment() {
 
         val button2 = view.findViewById<Button>(R.id.button_a2)
         button2.setOnClickListener {
-            drawerLayout.openDrawer(GravityCompat.START)
+            drawerLayout?.openDrawer(GravityCompat.START)
         }
 
-        val drawerNavView = view.findViewById<NavigationView>(R.id.drawer_navigation_view)
-        drawerNavView.setNavigationItemSelectedListener { _ ->
+        val drawerNavView = activity?.findViewById<NavigationView>(R.id.drawer_navigation_view)
+        drawerNavView?.setNavigationItemSelectedListener { _ ->
             val action = FragmentADirections.actionFragmentAToFragmentC()
             findNavController().navigate(action)
 
-            drawerLayout.closeDrawer(GravityCompat.START)
-
+            drawerLayout?.closeDrawer(GravityCompat.START)
             true
         }
     }
