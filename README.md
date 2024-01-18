@@ -16,3 +16,6 @@ Fragment A should be displayed, as this was the previous fragment displayed befo
 
 Actual results:
 Swipe gestures and pressing the physical back button does not work anymomre - so you will still be on Fragment C.  Poping the backstack manually does work, and is implemented in Fragments B, C, and D to provide a means to navigate the app while in this broken state.
+
+
+See `drawer-layout-in-activity` branch, or https://github.com/ZOlbrys/BackNavigationTestApp/pull/1 for a potential fix where the `DrawerLayout` is removed from `FragmentA` and put into `MainActivity`.
