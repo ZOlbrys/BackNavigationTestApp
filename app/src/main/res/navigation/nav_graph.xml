@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/fragmentA"
         android:name="com.example.backnavigationtestapp.FragmentA"
-        android:label="fragment_a"
+        android:label="Fragment A"
         tools:layout="@layout/fragment_a">
         <action
             android:id="@+id/action_fragmentA_to_fragmentB"
@@ -20,12 +20,12 @@
     <fragment
         android:id="@+id/fragmentB"
         android:name="com.example.backnavigationtestapp.FragmentB"
-        android:label="fragment_b"
+        android:label="Fragment B"
         tools:layout="@layout/fragment_b" />
     <fragment
         android:id="@+id/fragmentC"
         android:name="com.example.backnavigationtestapp.FragmentC"
-        android:label="fragment_c"
+        android:label="Fragment C"
         tools:layout="@layout/fragment_c" >
         <action
             android:id="@+id/action_fragmentC_to_fragmentD"
@@ -34,6 +34,6 @@
     <fragment
         android:id="@+id/fragmentD"
         android:name="com.example.backnavigationtestapp.FragmentD"
-        android:label="fragment_d"
+        android:label="Fragment D"
         tools:layout="@layout/fragment_d" />
 </navigation>
