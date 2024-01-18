@@ -47,6 +47,8 @@ class FragmentA : Fragment() {
             val action = FragmentADirections.actionFragmentAToFragmentC()
             findNavController().navigate(action)
 
+            drawerLayout.closeDrawer(GravityCompat.START)
+
             true
         }
     }
